@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <link rel="stylesheet" href="style.css" />
+ 
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">NETFLIX</div>
+    <input type="text" id="searchBar" placeholder="Search movies, series..." oninput="searchContent()" />
+    <div class="hamburger" onclick="toggleNav()">&#9776;</div>
+     <ul class="nav-links">
+    <li onclick="showTab('home')">Home</li>
+    <li onclick="showTab('tv')">TV Series</li>
+    <li onclick="showTab('movies')">Movies</li>
+    <li onclick="showTab('popular')">New & Popular</li>
+    <li onclick="showTab('mylist')">My List</li>
+  </ul>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Stranger Things</h1>
+      <p>Watch Season 4 now</p>
+      <button>Play</button>
+      <button>More Info</button>
+    </div>
+  </section>
+  <!-- Sections -->
+<section class="tab-content" id="home">
+  <h2>Trending Now</h2>
+  <div class="row-posters" id="trending"></div>
+</section>
+
+<section class="tab-content" id="tv" style="display:none;">
+  <h2>TV Series</h2>
+  <div class="row-posters" id="tvSeries"></div>
+</section>
+
+<section class="tab-content" id="movies" style="display:none;">
+  <h2>Movies</h2>
+  <div class="row-posters" id="movieList"></div>
+</section>
+
+<section class="tab-content" id="popular" style="display:none;">
+  <h2>New & Popular</h2>
+  <div class="row-posters" id="popularList"></div>
+</section>
+
+<section class="tab-content" id="mylist" style="display:none;">
+  <h2>My List</h2>
+  <div class="row-posters" id="myList"></div>
+</section>
+
+  <section class="row">
+    <h2>Trending Now</h2>
+    <div class="row-posters" id="trending">
+      <!-- Images will be inserted via JavaScript -->
+    </div>
+  </section>
+
+  <section class="row">
+    <h2>Top Rated</h2>
+    <div class="row-posters" id="topRated">
+      <!-- Images will be inserted via JavaScript -->
+    </div>
+    <button onclick="logout()">Logout</button>
+
+<script>
+  function logout() {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = 'login.html';
+  }
+</script>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
